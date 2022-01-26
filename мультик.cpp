@@ -1,13 +1,16 @@
 #include "TXLib.h"
 
 void house (int x, int y, int size);
-void man   (int x, int y, int size, double lhandm, double rhandm);
+void man   (int x, int y, int size, double lhandm, double lhamdmh, double rhandm, double rhamdmh, int lleg, int rleg);
 void girl  (int x, int y, int size, double lhandg, double rhandg);
 void tree  (int x, int y, int size);
 void tree1 (int x, int y, int size);
 void sun   (int x, int y, int size);
 void ball  (int x, int y, int size, int h, int l);
-void sea   (int x, int y, int size);
+void sea   ();
+
+void Scene_1();
+void Scene_2();
 
 int main ()
     {
@@ -16,32 +19,43 @@ int main ()
     txSetFillColor (TX_WHITE);
     txRectangle (0, 0, 1200, 800);
 
+    Scene_1();
+    Scene_2();
+
+    return 0;
+    }
+
+void Scene_1()
+{
 //—цена 1--------------------------------------------------------------------------------------------------------------
-    for (int z = 0; z <= 6; z++)
+//ƒевочка играет в м€чик
+    for (int z = 0; z <= 8; z++)
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 30 * (z % 2), 30 * (z % 2));
     tree  (1100, 500, 1);
-    tree1  ( 950, 450, 1);
-    tree  ( 800, 400, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
     sun   (1200,   0, 1);
+    sea   ();
     ball  ( 635, 385, 1, 100 * (z % 2), 0);
-    sea   (1200, 800, 1);
+
 
     txSleep (450);
     txSetFillColor (TX_WHITE);
     txClear();
     }
 
+//ћ€чик летик в речку
     for (int z = 1; z <= 4; z++)
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 0, 0);
     tree  (1100, 500, 1);
-    tree1  ( 950, 450, 1);
-    tree  ( 800, 400, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
     sun   (1200,   0, 1);
-    sea   (1200, 800, 1);
+    sea   ();
     ball  ( 635, 385, 1, -80 * (z % 5), 80 * (z % 5));
 
     txSleep (450);
@@ -49,23 +63,127 @@ int main ()
     txClear();
     }
 
+//ћ€чик лежит в речке
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 0, 0);
     tree  (1100, 500, 1);
-    tree1  ( 950, 450, 1);
-    tree  ( 800, 400, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
     sun   (1200,   0, 1);
-    sea   (1200, 800, 1);
+    sea   ();
+    ball  ( 955, 705, 1, 0, 0);
+    }
+}
+
+void Scene_2()
+{
+//—цена 2--------------------------------------------------------------------------------------------------------------
+//ѕо€вл€етс€ мальчик
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 200, 600, 1, 0, 0, 0, 0, 0, 0);
     ball  ( 955, 705, 1, 0, 0);
     }
 
-//—цена 2--------------------------------------------------------------------------------------------------------------
-    /*
-    man   ( 450, 350, 1, 0, 0);
-    */
-    return 0;
+//ћальчик идЄт к м€чу
+    for (int z = 0; z <= 7; z++)
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 200 + 90 * (z % 8), 600, 1, 0, 0, 0, 0, 0, 0);
+    ball  ( 955, 705, 1, 0, 0);
+
+    txSleep (450);
+    txSetFillColor (TX_WHITE);
+    txClear();
     }
+
+//ћальчик пришЄл к м€чу
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 600, 1, 200, 50, 0, 50, 0, 0);
+    ball  ( 955, 705, 1, 0, 0);
+    }
+
+//ћальчик берЄт м€чик
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 600, 1, 200, 50, 0, 50, 0, 0);
+    ball  ( 925, 685, 1, 0, 0);
+    }
+
+//ћальчик идЄт к девочке с м€чиком
+    for (int z = 0; z <= 5; z++)
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 600 - 50 * (z % 6), 1, 200, 50, 0, 50, 0, 0);
+    ball  ( 925, 685 - 50 * (z % 6), 1, 0, 0);
+
+    txSleep (450);
+    txSetFillColor (TX_WHITE);
+    txClear();
+    }
+
+//ћальчик пришЄл к девочке с м€чиком
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 330, 1, 200, 50, 0, 50, 0, 0);
+    ball  ( 925, 420, 1, 0, 0);
+
+    txSetFillColor (TX_WHITE);
+    txClear();
+    }
+
+//ћальчик повернулс€ к девочке с м€чиком
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 330, 1, 0, 50, -200, 50, -50, -50);
+    ball  ( 725, 420, 1, 0, 0);
+    }
+}
+
 //-------------------------------------------------------------------------
 void house (int x, int y, int size)
     {
@@ -95,24 +213,30 @@ size - размер фигуры
     txRectangle    (x + 115*size, y + 400*size, x + 125*size, y + 425*size);
     }
 //-------------------------------------------------------------------------
-void man   (int x, int y, int size, double lhandm, double rhandm)
+void man   (int x, int y, int size, double lhandm, double lhamdmh, double rhandm, double rhamdmh, int lleg, int rleg)
     {
 /*
 ѕараметры:
 x, y - координаты
 size - размер фигуры
-lhandm - положение левой руки
-rhandm - положение правой руки
+lhandm - положение левой руки "длина"
+lhamdmh - положение левой руки по высоте
+rhandm - положение правой руки "длина"
+rhandmh - положение правой руки по высоте
+lleg - положение левой ноги
+rleg - положение правой ноги
 */
 
 //! руки
-    txSetColor (RGB (  0,   0,   0), 3);
-    txLine     (x - 100*size - lhandm, y + 50*size - lhandm, x -  50*size,         y*size);
-    txLine     (x +  50*size,         y*size,              x + 100*size + rhandm, y + 50*size - rhandm);
+    txSetColor (RGB ( 0, 0, 0), 3);
+    txLine     (x - 100*size + lhandm, y + 50*size + lhamdmh, x -  50*size,          y*size);
+    txLine     (x +  50*size,          y*size,                x + 100*size + rhandm, y + 50*size + rhamdmh);
 
 //! ноги
-    txLine (x*size, y + 100*size, x - 25*size, y + 150*size);
-    txLine (x*size, y + 100*size, x + 25*size, y + 150*size);
+    txLine (x*size,      y + 100*size, x - 25*size, y + 170*size);
+    txLine (x*size,      y + 100*size, x + 25*size, y + 170*size);
+    txLine (x - 25*size, y + 170*size, x*size + lleg,     y + 170*size);
+    txLine (x + 25*size, y + 170*size, x + 50*size + rleg, y + 170*size);
 
 //--- тело
     txSetFillColor (RGB (0, 0, 0));
@@ -141,7 +265,7 @@ rhandg - положение правой руки
 */
 
 //--- руки
-    txSetColor (RGB (  0,   0,   0), 3);
+    txSetColor (RGB (  0, 0, 0), 3);
     txLine     (x + 75*size, y + 30*size - lhandg, x*size,      y + 20*size);
     txLine     (x*size,               y + 20*size, x + 75*size, y + 45*size - rhandg);
 
@@ -155,6 +279,8 @@ rhandg - положение правой руки
 //--- ноги
     txLine (x*size, y + 80*size, x - 25*size, y + 120*size);
     txLine (x*size, y + 80*size, x + 25*size, y + 120*size);
+    txLine (x - 25*size, y + 120*size, x - 5*size, y + 120*size);
+    txLine (x + 25*size, y + 120*size, x + 45*size, y + 120*size);
 
 //--- голова
     txSetFillColor (RGB (255, 255, 255));
@@ -180,7 +306,7 @@ size - размер фигуры
 */
 
 //--- ствол
-    txSetColor     (RGB (  0,   0,   0), 3);
+    txSetColor     (RGB (  0,  0,  0), 3);
     txSetFillColor (RGB (139, 69, 19));
     txRectangle    (x, y, x + 25, y - 250);
 
@@ -201,12 +327,12 @@ size - размер фигуры
 */
 
 //--- ствол
-    txSetColor     (RGB (  0,   0,   0), 3);
+    txSetColor     (RGB (  0,  0,  0), 3);
     txSetFillColor (RGB (160, 82, 45));
     txRectangle    (x, y, x + 25, y - 250);
 
 //--- крона
-    txSetColor     (RGB (  0,   0,   0), 3);
+    txSetColor     (RGB ( 0,   0,  0), 3);
     txSetFillColor (RGB (50, 205, 50));
     txCircle       (x + 12*size, y - 150*size, 75*size);
 
@@ -236,12 +362,12 @@ h - высота
 l - длина
 */
 
-    txSetColor     (RGB (  0,   0,   0), 3);
+    txSetColor     (RGB (  0,   0, 0), 3);
     txSetFillColor (RGB (255, 140, 0));
     txCircle       (x*size + l, y*size - h, 40*size);
     }
 //-------------------------------------------------------------------------
-void sea   (int x, int y, int size)
+void sea ()
     {
 /*
 ѕараметры:
@@ -249,7 +375,7 @@ x, y - координаты
 size - размер фигуры
 */
 
-    txSetColor     (RGB (  0,   0,   0), 3);
+    txSetColor     (RGB (0,   0,   0), 3);
     txSetFillColor (RGB (0, 191, 255));
     txEllipse (650, 1000, 2400, 500);
     }
