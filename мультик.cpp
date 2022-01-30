@@ -11,6 +11,7 @@ void sea   ();
 
 void Scene_1();
 void Scene_2();
+void Scene_3();
 
 int main ()
     {
@@ -21,14 +22,15 @@ int main ()
 
     Scene_1();
     Scene_2();
+    Scene_3();
 
     return 0;
     }
 
 void Scene_1()
 {
-//ЕѓГ¶ДєГ­Е• 1--------------------------------------------------------------------------------------------------------------
-//Г„ДєГўГ®Г·Д™Е• ДЌДѓД‘Е•ДєЕ€ Гў Д›Л™Г·ДЌД™
+//Сцена 1--------------------------------------------------------------------------------------------------------------
+//Девочка играет в мячик
     for (int z = 0; z <= 8; z++)
     {
     house (   0,   0, 1);
@@ -40,13 +42,17 @@ void Scene_1()
     sea   ();
     ball  ( 635, 385, 1, 100 * (z % 2), 0);
 
+    txSetColor (RGB (255, 0, 0));
+    txSelectFont("Comic Sans MS", 80);
+    txTextOut (550, 100, "Мячик");
+
 
     txSleep (450);
     txSetFillColor (TX_WHITE);
     txClear();
     }
 
-//ДљЛ™Г·ДЌД™ Г«ДєЕ€ДЌД™ Гў Д‘ДєГ·Д™Гі
+//Мячик летит в речку
     for (int z = 1; z <= 4; z++)
     {
     house (   0,   0, 1);
@@ -58,12 +64,17 @@ void Scene_1()
     sea   ();
     ball  ( 635, 385, 1, -80 * (z % 5), 80 * (z % 5));
 
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "Наша Таня громко плачет:");
+    txTextOut (420, 150, "Уронила в речку мячик.");
+
     txSleep (450);
     txSetFillColor (TX_WHITE);
     txClear();
     }
 
-//ДљЛ™Г·ДЌД™ Г«ДєД‡ДЌЕ€ Гў Д‘ДєГ·Д™Дє
+//Мячик лежит в речке
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 0, 0);
@@ -73,13 +84,18 @@ void Scene_1()
     sun   (1200,   0, 1);
     sea   ();
     ball  ( 955, 705, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "Наша Таня громко плачет:");
+    txTextOut (420, 150, "Уронила в речку мячик.");
     }
 }
- 
+
 void Scene_2()
 {
-//ЕѓГ¶ДєГ­Е• 2--------------------------------------------------------------------------------------------------------------
-//ДЋГ®Л™ГўГ«Л™ДєЕ€Е„Л™ Д›Е•Г«ГјГ·ДЌД™
+//Сцена 2--------------------------------------------------------------------------------------------------------------
+//Появляется мальчик
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 0, 0);
@@ -90,9 +106,14 @@ void Scene_2()
     sea   ();
     man   ( 200, 600, 1, 0, 0, 0, 0, 0, 0);
     ball  ( 955, 705, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "Наша Таня громко плачет:");
+    txTextOut (420, 150, "Уронила в речку мячик.");
     }
 
-//ДљЕ•Г«ГјГ·ДЌД™ ДЌГ¤ВёЕ€ Д™ Д›Л™Г·Гі
+//Мальчик идёт к мячу
     for (int z = 0; z <= 7; z++)
     {
     house (   0,   0, 1);
@@ -105,12 +126,17 @@ void Scene_2()
     man   ( 200 + 90 * (z % 8), 600, 1, 0, 0, 0, 0, 0, 0);
     ball  ( 955, 705, 1, 0, 0);
 
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "Наша Таня громко плачет:");
+    txTextOut (420, 150, "Уронила в речку мячик.");
+
     txSleep (450);
     txSetFillColor (TX_WHITE);
     txClear();
     }
 
-//ДљЕ•Г«ГјГ·ДЌД™ ДЏД‘ДЌЕ™ВёГ« Д™ Д›Л™Г·Гі
+//Мальчик пришёл к мячу
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 0, 0);
@@ -121,9 +147,14 @@ void Scene_2()
     sea   ();
     man   ( 830, 600, 1, 200, 50, 0, 50, 0, 0);
     ball  ( 955, 705, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "— Тише, Танечка, не плачь:");
+    txTextOut (420, 150, "Не утонет в речке мяч.");
     }
 
-//ДљЕ•Г«ГјГ·ДЌД™ ГЎДєД‘ВёЕ€ Д›Л™Г·ДЌД™
+//Мальчик берёт мячик
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 0, 0);
@@ -134,9 +165,14 @@ void Scene_2()
     sea   ();
     man   ( 830, 600, 1, 200, 50, 0, 50, 0, 0);
     ball  ( 925, 685, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "— Тише, Танечка, не плачь:");
+    txTextOut (420, 150, "Не утонет в речке мяч.");
     }
 
-//ДљЕ•Г«ГјГ·ДЌД™ ДЌГ¤ВёЕ€ Д™ Г¤ДєГўГ®Г·Д™Дє Е„ Д›Л™Г·ДЌД™Г®Д›
+//Мальчик идёт к девочке с мячиком
     for (int z = 0; z <= 5; z++)
     {
     house (   0,   0, 1);
@@ -149,12 +185,17 @@ void Scene_2()
     man   ( 830, 600 - 50 * (z % 6), 1, 200, 50, 0, 50, 0, 0);
     ball  ( 925, 685 - 50 * (z % 6), 1, 0, 0);
 
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "— Тише, Танечка, не плачь:");
+    txTextOut (420, 150, "Не утонет в речке мяч.");
+
     txSleep (450);
     txSetFillColor (TX_WHITE);
     txClear();
     }
 
-//ДљЕ•Г«ГјГ·ДЌД™ ДЏД‘ДЌЕ™ВёГ« Д™ Г¤ДєГўГ®Г·Д™Дє Е„ Д›Л™Г·ДЌД™Г®Д›
+//Мальчик пришёл к девочке с мячиком
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 0, 0);
@@ -166,11 +207,16 @@ void Scene_2()
     man   ( 830, 330, 1, 200, 50, 0, 50, 0, 0);
     ball  ( 925, 420, 1, 0, 0);
 
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "— Тише, Танечка, не плачь:");
+    txTextOut (420, 150, "Не утонет в речке мяч.");
+
     txSetFillColor (TX_WHITE);
     txClear();
     }
 
-//ДљЕ•Г«ГјГ·ДЌД™ ДЏГ®ГўДєД‘Г­ГіГ«Е„Л™ Д™ Г¤ДєГўГ®Г·Д™Дє Е„ Д›Л™Г·ДЌД™Г®Д›
+//Мальчик повернулся к девочке с мячиком
     {
     house (   0,   0, 1);
     girl  ( 550, 380, 1, 0, 0);
@@ -181,6 +227,98 @@ void Scene_2()
     sea   ();
     man   ( 830, 330, 1, 0, 50, -200, 50, -50, -50);
     ball  ( 725, 420, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "— Тише, Танечка, не плачь:");
+    txTextOut (420, 150, "Не утонет в речке мяч.");
+    }
+}
+
+void Scene_3()
+{
+//Сцена 3--------------------------------------------------------------------------------------------------------------
+//Мальчик повернулся к девочке с мячиком
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 330, 1, 0, 50, -200, 50, -50, -50);
+    ball  ( 725, 420, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "— Тише, Танечка, не плачь:");
+    txTextOut (420, 150, "Не утонет в речке мяч.");
+
+    txSleep (450);
+    txSetFillColor (TX_WHITE);
+    txClear();
+    }
+
+//Мальчик отдаёт девочке мячик
+    {
+    house (   0,   0, 1);
+    girl  ( 550, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 330, 1, -15, 0, -170, 0, -50, -50);
+    ball  ( 635, 400, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (420, 100, "— Тише, Танечка, не плачь:");
+    txTextOut (420, 150, "Не утонет в речке мяч.");
+
+    txSleep (450);
+    txSetFillColor (TX_WHITE);
+    txClear();
+    }
+
+//Двигаем девочку
+    {
+    house (   0,   0, 1);
+    girl  ( 450, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 330, 1, -15, 0, -170, 0, -50, -50);
+    ball  ( 535, 400, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (400, 100, "Давай вместе играть в мячик!");
+
+    txSleep (450);
+    txSetFillColor (TX_WHITE);
+    txClear();
+    }
+
+//Ребята играют в мячик
+    for (int z = 0; z <= 8; z++)
+    {
+    house (   0,   0, 1);
+    girl  ( 450, 380, 1, 0, 0);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 330, 1, -15, 0, -170, 0, -50, -50);
+    ball  ( 535, 400, 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (400, 100, "Давай вместе играть в мячик!");
     }
 }
 
@@ -188,27 +326,27 @@ void Scene_2()
 void house (int x, int y, int size)
     {
 /*
-ДЋЕ•Д‘Е•Д›ДєЕ€Д‘Е±:
-x, y - Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е±
-size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
+Параметры:
+x, y - координаты
+size - размер фигуры
 */
 
-//--- Г¤Г®Д›
+//--- дом
     txSetColor     (RGB (  0,   0,   0), 2);
     txSetFillColor (RGB (160, 160, 160));
     txRectangle    (x*size, y*size, x+200*size, y+500*size);
 
-//--- Г®Д™Г­Г®
+//--- окно
     txSetFillColor (RGB (255, 255, 255));
     txRectangle    (x + 50*size, y + 50*size, x + 150*size, y + 200*size);
 
     txLine (x + 100*size, y +  50*size, x + 100*size, y + 200*size);
     txLine (x +  50*size, y + 100*size, x + 150*size, y + 100*size);
 
-//--- Г¤ГўДєД‘Гј
+//--- дверь
     txRectangle (x + 50*size, y + 300*size, x + 150*size, y + 500*size);
 
-//--- Д‘ГіГ·Д™Е•
+//--- ручка
     txSetFillColor (RGB (0, 0, 0));
     txRectangle    (x + 115*size, y + 400*size, x + 125*size, y + 425*size);
     }
@@ -216,39 +354,39 @@ size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
 void man   (int x, int y, int size, double lhandm, double lhamdmh, double rhandm, double rhamdmh, int lleg, int rleg)
     {
 /*
-ДЋЕ•Д‘Е•Д›ДєЕ€Д‘Е±:
-x, y - Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е±
-size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
-lhandm - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє Г«ДєГўГ®Г© Д‘ГіД™ДЌ "Г¤Г«ДЌГ­Е•"
-lhamdmh - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє Г«ДєГўГ®Г© Д‘ГіД™ДЌ ДЏГ® ГўЕ±Е„Г®Е€Дє
-rhandm - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє ДЏД‘Е•ГўГ®Г© Д‘ГіД™ДЌ "Г¤Г«ДЌГ­Е•"
-rhandmh - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє ДЏД‘Е•ГўГ®Г© Д‘ГіД™ДЌ ДЏГ® ГўЕ±Е„Г®Е€Дє
-lleg - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє Г«ДєГўГ®Г© Г­Г®ДѓДЌ
-rleg - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє ДЏД‘Е•ГўГ®Г© Г­Г®ДѓДЌ
+Параметры:
+x, y - координаты
+size - размер фигуры
+lhandm - положение левой руки "длина"
+lhamdmh - положение левой руки по высоте
+rhandm - положение правой руки "длина"
+rhandmh - положение правой руки по высоте
+lleg - положение левой ноги
+rleg - положение правой ноги
 */
 
-//! Д‘ГіД™ДЌ
+//! руки
     txSetColor (RGB ( 0, 0, 0), 3);
     txLine     (x - 100*size + lhandm, y + 50*size + lhamdmh, x -  50*size,          y*size);
     txLine     (x +  50*size,          y*size,                x + 100*size + rhandm, y + 50*size + rhamdmh);
 
-//! Г­Г®ДѓДЌ
+//! ноги
     txLine (x*size,      y + 100*size, x - 25*size, y + 170*size);
     txLine (x*size,      y + 100*size, x + 25*size, y + 170*size);
     txLine (x - 25*size, y + 170*size, x*size + lleg,     y + 170*size);
     txLine (x + 25*size, y + 170*size, x + 50*size + rleg, y + 170*size);
 
-//--- Е€ДєГ«Г®
+//--- тело
     txSetFillColor (RGB (0, 0, 0));
     POINT bodyman [4] {{x - 50*size, y*size},       {x + 50*size, y*size},
                        {x*size,      y + 100*size}, {x - 50*size, y*size}};
     txPolygon (bodyman, 4);
 
-//--- ДѓГ®Г«Г®ГўЕ•
+//--- голова
     txSetFillColor (RGB (255, 255, 255));
     txCircle       (x*size, y - 25*size, 25*size);
 
-//--- Е™Г«Л™ДЏЕ•
+//--- шляпа
     txSetFillColor (RGB (0, 0, 0));
     txRectangle    (x - 25*size, y - 50*size, x + 25*size, y - 60*size);
     txRectangle    (x - 10*size, y - 60*size, x + 10*size, y - 80*size);
@@ -257,36 +395,36 @@ rleg - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє ДЏД‘Е•ГўГ®Г© Г­Г®ДѓДЌ
 void girl  (int x, int y, int size, double lhandg, double rhandg)
     {
 /*
-ДЋЕ•Д‘Е•Д›ДєЕ€Д‘Е±:
-x, y - Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е±
-size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
-lhandg - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє Г«ДєГўГ®Г© Д‘ГіД™ДЌ
-rhandg - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє ДЏД‘Е•ГўГ®Г© Д‘ГіД™ДЌ
+Параметры:
+x, y - координаты
+size - размер фигуры
+lhandg - положение левой руки
+rhandg - положение правой руки
 */
 
-//--- Д‘ГіД™ДЌ
+//--- руки
     txSetColor (RGB (  0, 0, 0), 3);
     txLine     (x + 75*size, y + 30*size - lhandg, x*size,      y + 20*size);
     txLine     (x*size,               y + 20*size, x + 75*size, y + 45*size - rhandg);
 
 
-//--- Е€ДєГ«Г®
+//--- тело
     txSetFillColor (RGB (255, 128, 255));
     POINT bodygirl [4] {{x - 50*size, y + 80*size}, {x + 50*size, y + 80*size},
                         {x*size,      y*size},      {x - 50*size, y + 80*size}};
     txPolygon (bodygirl, 4);
 
-//--- Г­Г®ДѓДЌ
+//--- ноги
     txLine (x*size, y + 80*size, x - 25*size, y + 120*size);
     txLine (x*size, y + 80*size, x + 25*size, y + 120*size);
     txLine (x - 25*size, y + 120*size, x - 5*size, y + 120*size);
     txLine (x + 25*size, y + 120*size, x + 45*size, y + 120*size);
 
-//--- ДѓГ®Г«Г®ГўЕ•
+//--- голова
     txSetFillColor (RGB (255, 255, 255));
     txCircle       (x*size, y - 15*size, 20*size);
 
-//--- ГЎЕ•Г­Е€ДЌД™
+//--- бантик
     txSetFillColor (RGB (255, 0, 0));
     POINT bowtieleftside [4] {{x - 15*size, y - 30*size}, {x - 15*size, y - 55*size},
                               {x*size,      y - 40*size}, {x - 15*size, y - 30*size}};
@@ -300,17 +438,17 @@ rhandg - ДЏГ®Г«Г®Д‡ДєГ­ДЌДє ДЏД‘Е•ГўГ®Г© Д‘ГіД™ДЌ
 void tree  (int x, int y, int size)
     {
 /*
-ДЋЕ•Д‘Е•Д›ДєЕ€Д‘Е±:
-x, y - Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е±
-size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
+Параметры:
+x, y - координаты
+size - размер фигуры
 */
 
-//--- Е„Е€ГўГ®Г«
+//--- ствол
     txSetColor     (RGB (  0,  0,  0), 3);
     txSetFillColor (RGB (139, 69, 19));
     txRectangle    (x, y, x + 25, y - 250);
 
-//--- Д™Д‘Г®Г­Е•
+//--- крона
     txSetColor     (RGB (  0,   0,   0), 3);
     txSetFillColor (RGB (  0, 128,   0));
     txCircle       (x + 12*size, y - 150*size, 75*size);
@@ -321,17 +459,17 @@ size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
 void tree1  (int x, int y, int size)
     {
 /*
-ДЋЕ•Д‘Е•Д›ДєЕ€Д‘Е±:
-x, y - Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е±
-size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
+Параметры:
+x, y - координаты
+size - размер фигуры
 */
 
-//--- Е„Е€ГўГ®Г«
+//--- ствол
     txSetColor     (RGB (  0,  0,  0), 3);
     txSetFillColor (RGB (160, 82, 45));
     txRectangle    (x, y, x + 25, y - 250);
 
-//--- Д™Д‘Г®Г­Е•
+//--- крона
     txSetColor     (RGB ( 0,   0,  0), 3);
     txSetFillColor (RGB (50, 205, 50));
     txCircle       (x + 12*size, y - 150*size, 75*size);
@@ -342,9 +480,9 @@ size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
 void sun   (int x, int y, int size)
     {
 /*
-ДЋЕ•Д‘Е•Д›ДєЕ€Д‘Е±:
-x, y - Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е±
-size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
+Параметры:
+x, y - координаты
+size - размер фигуры
 */
 
     txSetColor     (RGB (  0,   0,   0), 3);
@@ -355,11 +493,11 @@ size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
 void ball  (int x, int y, int size, int h, int l)
     {
 /*
-ДЋЕ•Д‘Е•Д›ДєЕ€Д‘Е±:
-x, y - Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е±
-size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
-h - ГўЕ±Е„Г®Е€Е•
-l - Г¤Г«ДЌГ­Е•
+Параметры:
+x, y - координаты
+size - размер фигуры
+h - высота
+l - длина
 */
 
     txSetColor     (RGB (  0,   0, 0), 3);
@@ -370,9 +508,9 @@ l - Г¤Г«ДЌГ­Е•
 void sea ()
     {
 /*
-ДЋЕ•Д‘Е•Д›ДєЕ€Д‘Е±:
-x, y - Д™Г®Г®Д‘Г¤ДЌГ­Е•Е€Е±
-size - Д‘Е•Г§Д›ДєД‘ ГґДЌДѓГіД‘Е±
+Параметры:
+x, y - координаты
+size - размер фигуры
 */
 
     txSetColor     (RGB (0,   0,   0), 3);
