@@ -8,6 +8,7 @@ void tree1 (int x, int y, int size);
 void sun   (int x, int y, int size);
 void ball  (int x, int y, int size, int h, int l);
 void sea   ();
+void piece_of_sea (int x, int y, int size);
 
 void Scene_1();
 void Scene_2();
@@ -43,8 +44,8 @@ void Scene_1()
     ball  ( 635, 385, 1, 100 * (z % 2), 0);
 
     txSetColor (RGB (255, 0, 0));
-    txSelectFont("Comic Sans MS", 80);
-    txTextOut (550, 100, "Мячик");
+    txSelectFont("Comic Sans MS", 100);
+    txTextOut (525, 100, "Мячик");
 
 
     txSleep (450);
@@ -124,6 +125,7 @@ void Scene_2()
     sun   (1200,   0, 1);
     sea   ();
     man   ( 200 + 90 * (z % 8), 600, 1, 0, 0, 0, 0, 0, 0);
+    piece_of_sea ( 700, 725, 1);
     ball  ( 955, 705, 1, 0, 0);
 
     txSetColor (RGB (0, 0, 205));
@@ -146,6 +148,7 @@ void Scene_2()
     sun   (1200,   0, 1);
     sea   ();
     man   ( 830, 600, 1, 200, 50, 0, 50, 0, 0);
+    piece_of_sea ( 700, 725, 1);
     ball  ( 955, 705, 1, 0, 0);
 
     txSetColor (RGB (0, 0, 205));
@@ -164,6 +167,7 @@ void Scene_2()
     sun   (1200,   0, 1);
     sea   ();
     man   ( 830, 600, 1, 200, 50, 0, 50, 0, 0);
+    piece_of_sea ( 700, 725, 1);
     ball  ( 925, 685, 1, 0, 0);
 
     txSetColor (RGB (0, 0, 205));
@@ -183,6 +187,7 @@ void Scene_2()
     sun   (1200,   0, 1);
     sea   ();
     man   ( 830, 600 - 50 * (z % 6), 1, 200, 50, 0, 50, 0, 0);
+    piece_of_sea ( 750, 725 - 30 * (z % 4) , 1);
     ball  ( 925, 685 - 50 * (z % 6), 1, 0, 0);
 
     txSetColor (RGB (0, 0, 205));
@@ -215,24 +220,6 @@ void Scene_2()
     txSetFillColor (TX_WHITE);
     txClear();
     }
-
-//Мальчик повернулся к девочке с мячиком
-    {
-    house (   0,   0, 1);
-    girl  ( 550, 380, 1, 0, 0);
-    tree  (1100, 500, 1);
-    tree1 ( 950, 450, 1);
-    tree  ( 300, 400, 1);
-    sun   (1200,   0, 1);
-    sea   ();
-    man   ( 830, 330, 1, 0, 50, -200, 50, -50, -50);
-    ball  ( 725, 420, 1, 0, 0);
-
-    txSetColor (RGB (0, 0, 205));
-    txSelectFont("Comic Sans MS", 50);
-    txTextOut (420, 100, "— Тише, Танечка, не плачь:");
-    txTextOut (420, 150, "Не утонет в речке мяч.");
-    }
 }
 
 void Scene_3()
@@ -248,7 +235,7 @@ void Scene_3()
     sun   (1200,   0, 1);
     sea   ();
     man   ( 830, 330, 1, 0, 50, -200, 50, -50, -50);
-    ball  ( 725, 420, 1, 0, 0);
+    ball  ( 725, 400, 1, 0, 0);
 
     txSetColor (RGB (0, 0, 205));
     txSelectFont("Comic Sans MS", 50);
@@ -304,21 +291,64 @@ void Scene_3()
     }
 
 //Ребята играют в мячик
-    for (int z = 0; z <= 8; z++)
+    for (int a = 0; a <= 2; a++)
+    {
+    for (int z = 0; z <= 2; z++)
     {
     house (   0,   0, 1);
-    girl  ( 450, 380, 1, 0, 0);
+    girl  ( 450, 380, 1, 30 * (z % 2), 30 * (z % 2));
     tree  (1100, 500, 1);
     tree1 ( 950, 450, 1);
     tree  ( 300, 400, 1);
     sun   (1200,   0, 1);
     sea   ();
-    man   ( 830, 330, 1, -15, 0, -170, 0, -50, -50);
-    ball  ( 535, 400, 1, 0, 0);
+    man   ( 830, 330, 1, -15, -30 * (z % 2), -170, -30 * (z % 2), -50, -50);
+    ball  ( 535 + 100 * (z % 3), 400 - 100 * (z % 2), 1, 0, 0);
 
     txSetColor (RGB (0, 0, 205));
     txSelectFont("Comic Sans MS", 50);
     txTextOut (400, 100, "Давай вместе играть в мячик!");
+
+    txSleep (450);
+    txSetFillColor (TX_WHITE);
+    txClear();
+    }
+
+    for (int z = 0; z <= 2; z++)
+    {
+    house (   0,   0, 1);
+    girl  ( 450, 380, 1, 30 * (z % 2), 30 * (z % 2));
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    man   ( 830, 330, 1, -15, -30 * (z % 2), -170, -30 * (z % 2), -50, -50);
+    ball  ( 735 - 100 * (z % 3), 400 - 100 * (z % 2), 1, 0, 0);
+
+    txSetColor (RGB (0, 0, 205));
+    txSelectFont("Comic Sans MS", 50);
+    txTextOut (400, 100, "Давай вместе играть в мячик!");
+
+    txSleep (450);
+    txSetFillColor (TX_WHITE);
+    txClear();
+    }
+    }
+
+//Конец
+    {
+    house (   0,   0, 1);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
+    sun   (1200,   0, 1);
+    sea   ();
+    ball  ( 750, 725, 1, 0, 0);
+
+    txSetColor (RGB (255, 0, 0));
+    txSelectFont("Comic Sans MS", 150);
+    txTextOut (450, 300, "Конец");
     }
 }
 
@@ -518,4 +548,16 @@ size - размер фигуры
     txEllipse (650, 1000, 2400, 500);
     }
 //-------------------------------------------------------------------------
+void piece_of_sea (int x, int y, int size)
+    {
+/*
+Параметры:
+x, y - координаты
+size - размер фигуры
+*/
+
+    txSetColor     (RGB ( 0, 191, 255));
+    txSetFillColor (RGB ( 0, 191, 255));
+    txRectangle    (x*size, y*size, x+200*size, y+100*size);
+    }
 
