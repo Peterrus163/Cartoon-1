@@ -201,11 +201,11 @@ size - размер фигуры
 //--- дом
     txSetColor     (RGB (  0,   0,   0), 2);
     txSetFillColor (RGB (160, 160, 160));
-    txRectangle    (x*size, y*size, x+200*size, y+500*size);
+    txRectangle (x*size, y*size, x+200*size, y+500*size);
 
 //--- окно
     txSetFillColor (RGB (255, 255, 255));
-    txRectangle    (x + 50*size, y + 50*size, x + 150*size, y + 200*size);
+    txRectangle (x + 50*size, y + 50*size, x + 150*size, y + 200*size);
 
     txLine (x + 100*size, y +  50*size, x + 100*size, y + 200*size);
     txLine (x +  50*size, y + 100*size, x + 150*size, y + 100*size);
@@ -215,7 +215,7 @@ size - размер фигуры
 
 //--- ручка
     txSetFillColor (RGB (0, 0, 0));
-    txRectangle    (x + 115*size, y + 400*size, x + 125*size, y + 425*size);
+    txRectangle (x + 115*size, y + 400*size, x + 125*size, y + 425*size);
     }
 
 //-------------------------------------------------------------------------
@@ -235,8 +235,8 @@ rleg - положение правой ноги
 
 //! руки
     txSetColor (RGB ( 0, 0, 0), 3);
-    txLine     (x - 100*size + lhandm, y + 50*size + lhandmh, x -  50*size,          y*size);
-    txLine     (x +  50*size,          y*size,                x + 100*size + rhandm, y + 50*size + rhandmh);
+    txLine (x - 100*size + lhandm, y + 50*size + lhandmh, x -  50*size,          y*size);
+    txLine (x +  50*size,          y*size,                x + 100*size + rhandm, y + 50*size + rhandmh);
 
 //! ноги
     txLine (x*size,      y + 100*size, x - 25*size,        y + 170*size);
@@ -252,12 +252,12 @@ rleg - положение правой ноги
 
 //--- голова
     txSetFillColor (RGB (255, 255, 255));
-    txCircle       (x*size, y - 25*size, 25*size);
+    txCircle (x*size, y - 25*size, 25*size);
 
 //--- шляпа
     txSetFillColor (RGB (0, 0, 0));
-    txRectangle    (x - 25*size, y - 50*size, x + 25*size, y - 60*size);
-    txRectangle    (x - 10*size, y - 60*size, x + 10*size, y - 80*size);
+    txRectangle (x - 25*size, y - 50*size, x + 25*size, y - 60*size);
+    txRectangle (x - 10*size, y - 60*size, x + 10*size, y - 80*size);
     }
 
 //-------------------------------------------------------------------------
@@ -275,8 +275,8 @@ rhandgh - положение правой руки по высоте
 
 //--- руки
     txSetColor (RGB (  0, 0, 0), 3);
-    txLine     (x + 75*size - lhandg, y + 30*size - lhamdgh, x*size,               y + 20*size);
-    txLine     (x*size,               y + 20*size,           x + 75*size + rhandg, y + 45*size - rhamdgh);
+    txLine (x + 75*size - lhandg, y + 30*size - lhamdgh, x*size,               y + 20*size);
+    txLine (x*size,               y + 20*size,           x + 75*size + rhandg, y + 45*size - rhamdgh);
 
 
 //--- тело
@@ -293,7 +293,7 @@ rhandgh - положение правой руки по высоте
 
 //--- голова
     txSetFillColor (RGB (255, 255, 255));
-    txCircle       (x*size, y - 15*size, 20*size);
+    txCircle (x*size, y - 15*size, 20*size);
 
 //--- бантик
     txSetFillColor (RGB (255, 0, 0));
@@ -318,13 +318,13 @@ size - размер фигуры
 //--- ствол
     txSetColor     (RGB (  0,  0,  0), 3);
     txSetFillColor (RGB (139, 69, 19));
-    txRectangle    (x, y, x + 25, y - 250);
+    txRectangle (x, y, x + 25, y - 250);
 
 //--- крона
     txSetColor     (RGB (0,   0, 0), 3);
     txSetFillColor (RGB (0, 255, 0));
-    txCircle       (x + 12*size, y - 150*size, 75*size);
-    txCircle       (x + 12*size, y - 250*size, 50*size);
+    txCircle (x + 12*size, y - 150*size, 75*size);
+    txCircle (x + 12*size, y - 250*size, 50*size);
     }
 
 //-------------------------------------------------------------------------
@@ -339,13 +339,13 @@ size - размер фигуры
 //--- ствол
     txSetColor     (RGB (  0,  0,  0), 3);
     txSetFillColor (RGB (160, 82, 45));
-    txRectangle    (x, y, x + 25, y - 250);
+    txRectangle (x, y, x + 25, y - 250);
 
 //--- крона
     txSetColor     (RGB ( 0,   0,  0), 3);
     txSetFillColor (RGB (50, 205, 50));
-    txCircle       (x + 12*size, y - 150*size, 75*size);
-    txCircle       (x + 12*size, y - 250*size, 50*size);
+    txCircle (x + 12*size, y - 150*size, 75*size);
+    txCircle (x + 12*size, y - 250*size, 50*size);
     }
 
 //-------------------------------------------------------------------------
@@ -359,7 +359,7 @@ size - размер фигуры
 
     txSetColor     (RGB (  0,   0,   0), 3);
     txSetFillColor (RGB (255, 255, 128));
-    txCircle       (x*size, y*size, 100*size);
+    txCircle (x*size, y*size, 100*size);
     }
 
 //-------------------------------------------------------------------------
@@ -375,7 +375,7 @@ l - длина
 
     txSetColor     (RGB (  0,   0, 0), 3);
     txSetFillColor (RGB (255, 140, 0));
-    txCircle       (x*size + l, y*size - h, 40*size);
+    txCircle (x*size + l, y*size - h, 40*size);
     }
 
 //-------------------------------------------------------------------------
@@ -409,10 +409,10 @@ size - размер фигуры
 //-------------------------------------------------------------------------
 void decor ()
     {
-    house  (   0,   0, 1);
-    tree   (1100, 500, 1);
-    tree1  ( 950, 450, 1);
-    tree   ( 300, 400, 1);
+    house (   0,   0, 1);
+    tree  (1100, 500, 1);
+    tree1 ( 950, 450, 1);
+    tree  ( 300, 400, 1);
     sun   (1200,   0, 1);
     sea   ();
     }
@@ -422,8 +422,8 @@ void tears (int m)
     {
     for (int i = 0; i <= m; i++)
     {
-    txSetColor (RGB ( 0, 191, 255), 3);
-    txArc (440, 365, 675 + (15 * i), 620, 360, 90);
+    txSetColor     (RGB ( 0, 191, 255), 3);
+    txArc     (440, 365, 675 + (15 * i), 620, 360, 90);
     txSetFillColor (RGB (0, 191, 255));
     txEllipse (650, 490, 730 + (10 * i), 530);
     }
@@ -452,4 +452,3 @@ void text3 ()
     txTextOut    (400, 100, "Давай вместе играть в мячик!");
     }
 //-------------------------------------------------------------------------
-
